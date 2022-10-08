@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 
-//Сортировка выбором
+//РЎРѕСЂС‚РёСЂРѕРІРєР° РІС‹Р±РѕСЂРѕРј
 template <class T>
 void selectionSort(T* arr, int len) {
 	for (int i = 0; i < len; i++) {
@@ -23,7 +23,7 @@ void selectionSort(T* arr, int len) {
 	}
 }
 
-//Сортировка пузырьком
+//РЎРѕСЂС‚РёСЂРѕРІРєР° РїСѓР·С‹СЂСЊРєРѕРј
 template <class T>
 void bubbleSort(T* arr, int len) {
 	for (int i = 0; i < len - 1; i++) {
@@ -37,7 +37,7 @@ void bubbleSort(T* arr, int len) {
 	}
 }
 
-//Сортировка вставками
+//РЎРѕСЂС‚РёСЂРѕРІРєР° РІСЃС‚Р°РІРєР°РјРё
 template <class T>
 void insertSort(T* arr, int len) {
 	for (int i = 2; i < len; i++) {
@@ -51,7 +51,7 @@ void insertSort(T* arr, int len) {
 	}
 }
 
-//Функция ввода массива с клавиатуры
+//Р¤СѓРЅРєС†РёСЏ РІРІРѕРґР° РјР°СЃСЃРёРІР° СЃ РєР»Р°РІРёР°С‚СѓСЂС‹
 template <class T>
 void input_from_keyboard(T* arr, int len) {
 	for (int i = 0; i < len; i++) {
@@ -60,7 +60,7 @@ void input_from_keyboard(T* arr, int len) {
 	}
 }
 
-//Создание копии массива
+//Р¤СѓРЅРєС†РёСЏ РєРѕРїРёСЂРѕРІР°РЅРёСЏ РјР°СЃСЃРёРІР°
 template <class T>
 void copyArray(T* arr_from, T* arr_to, int len) {
 	for (int i = 0; i < len; i++) {
@@ -68,14 +68,14 @@ void copyArray(T* arr_from, T* arr_to, int len) {
 	}
 }
 
-//Заполнение массива случайными числами
+//Р¤СѓРЅРєС†РёСЏ Р·Р°РїРѕР»РЅРµРЅРёСЏ РјР°СЃСЃРёРІР° СЃР»СѓС‡Р°Р№РЅС‹РјРё С‡РёСЃР»Р°РјРё
 void gen_random_array(int* arr, int len, int val_min, int val_max) {
 	for (int i = 0; i < len; i++) {
 		arr[i] = rand()%(val_max - val_min + 1) + val_min;
 	}
 }
 
-//Вывод массива на экран
+//Р¤СѓРЅРєС†РёСЏ РІС‹РІРѕРґР° РјР°СЃСЃРёРІР° РЅР° СЌРєСЂР°РЅ
 template <class T>
 void printArray(T* arr, int len) {
 	for (int i = 0; i < len; i++) {
@@ -84,7 +84,7 @@ void printArray(T* arr, int len) {
 	std::cout << std::endl;
 }
 
-//Бинарный поиск
+//Р‘РёРЅР°СЂРЅС‹Р№ РїРѕРёСЃРє
 template <class T>
 int binSearch(T* arr, int len, T elem) {
 	int low = 0;
@@ -107,7 +107,7 @@ int binSearch(T* arr, int len, T elem) {
 	return -1;
 }
 
-//Сортировка подсчётом (только целые числа)
+//РЎРѕСЂС‚РёСЂРѕРІРєР° РїРѕРґСЃС‡С‘С‚РѕРј (С‚РѕР»СЊРєРѕ С†РµР»С‹Рµ С‡РёСЃР»Р°)
 template <class T>
 void countSort(T* arr, int len) {
 	T a_min = arr[0];
@@ -136,7 +136,7 @@ void countSort(T* arr, int len) {
 	delete[] temp;
 }
 
-//Функция, преобразующая двоичную кучу в max-heap
+//РџСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёРµ РґРІРѕРёС‡РЅРѕР№ РєСѓС‡Рё РІ max-heap
 template <class T>
 void heapify(T* arr, int len, int i) {
 	int largest = i;
@@ -156,7 +156,7 @@ void heapify(T* arr, int len, int i) {
 	}
 }
 
-//Пирамидальная сортировка
+//РџРёСЂР°РјРёРґР°Р»СЊРЅР°СЏ СЃРѕСЂС‚РёСЂРѕРІРєР°
 template <class T>
 void heapSort(T* arr, int len) {
 	for (int i = len / 2 - 1; i >= 0; i--)
