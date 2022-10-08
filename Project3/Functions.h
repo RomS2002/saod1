@@ -169,3 +169,33 @@ void heapSort(T* arr, int len) {
 		heapify(arr, i, 0);
 	}
 }
+
+//Быстрая сортировка
+template <class T>
+void quickSort(T* arr, int low, int high) {
+	if (low >= high)
+		return;
+	int mid = (high + low) / 2;
+	T mid_val = arr[mid];
+
+	int i = low;
+	int j = high;
+	while (1) {
+		while (arr[i] < mid_val)
+			i++;
+		while (arr[j] > mid_val)
+			j--;
+		if (i < j) {
+			T temp = arr[i];
+			arr[i] = arr[j];
+			arr[j] = temp;
+			i++;
+			j--;
+		}
+		else {
+			quickSort(arr, low, j);
+			quickSort(arr, j + 1, high);
+			return;
+		}
+	}
+}
