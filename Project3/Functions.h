@@ -199,3 +199,42 @@ void quickSort(T* arr, int low, int high) {
 		}
 	}
 }
+
+template <class T>
+int* mergeSort(T* first, T* second, int left, int right) {
+	if (left == right) {
+		second[left] = first[left];
+		return second;
+	}
+
+	int mid = (left + right) / 2;
+	
+	T* lbuff = mergeSort(first, second, left, mid);
+	T* rbuff = mergeSort(first, second, mid + 1, right);
+
+	T* target = (lbuff == first) ? second: first;
+	int curL = left;
+	int curR = mid + 1;
+
+	for (int i = left; i <= right; i++) {
+		if (curL <= mid && curR <= right) {
+			if (lbuff[curL] < rbuff[curR]) {
+				target[i] = lbuff[curL];
+				curL++;
+			}
+			else {
+				target[i] = rbuff[curR];
+				curR++;
+			}
+		}
+		else if (curL <= mid) {
+			target[i] = lbuff[curL];
+			curL++;
+		}
+		else {
+			target[i] = rbuff[curR];
+			curR++;
+		}
+	}
+	return target;
+}

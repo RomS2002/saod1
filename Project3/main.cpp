@@ -8,9 +8,10 @@ using namespace std;
 
 int main() {
 	/*int* a = new int[100];
+	int* b = new int[100];
 	gen_random_array(a, 100, -50, 50);
 	printArray(a, 100);
-	quickSort<int>(a, 0, 99);
+	mergeSort<int>(a, b, 0, 99);
 	printArray(a, 100);
 	delete[] a;*/
 	ofstream out("M:\\funcdata5.txt");
